@@ -2,7 +2,7 @@
  * BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
  *
  * Copyright(c) 2001-2018, Beowurks.
- * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html)
+ * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
  *
  */
 
@@ -81,14 +81,10 @@ public class SplashScreenWindow extends JWindow
   // ---------------------------------------------------------------------------
   protected void setProgressBar(final int tnValue, final String tcValue)
   {
-    SwingUtilities.invokeLater(new Runnable()
+    SwingUtilities.invokeLater(() ->
     {
-      @Override
-      public void run()
-      {
-        SplashScreenWindow.this.barAction1.setValue(tnValue);
-        SplashScreenWindow.this.barAction1.setString(tcValue);
-      }
+      SplashScreenWindow.this.barAction1.setValue(tnValue);
+      SplashScreenWindow.this.barAction1.setString(tcValue);
     });
 
   }

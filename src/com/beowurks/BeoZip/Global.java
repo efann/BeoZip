@@ -2,7 +2,7 @@
  * BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
  *
  * Copyright(c) 2001-2018, Beowurks.
- * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html)
+ * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
  *
  */
 
@@ -19,7 +19,7 @@ import java.io.File;
 public final class Global
 {
 
-  protected final static String LOCAL_PATH = Global.isDevelopmentEnvironment() ? Util.includeTrailingBackslash("\\Work\\Java\\BeoZip") : Util
+  protected final static String LOCAL_PATH = Global.isDevelopmentEnvironment() ? Util.includeTrailingBackslash("\\IntelliJ\\BeoZip") : Util
           .includeTrailingBackslash(Util.includeTrailingBackslash(Util.includeTrailingBackslash(System
                   .getProperty("user.home")) + "Beowurks")
                   + "BeoZip");
@@ -73,7 +73,7 @@ public final class Global
     final String lcUserDir = System.getProperty("user.dir").toLowerCase();
     final String lcFileSeparator = System.getProperty("file.separator");
 
-    return (lcUserDir.contains("java" + lcFileSeparator + "beozip" + lcFileSeparator + "src"));
+    return (lcUserDir.contains("intellij" + lcFileSeparator + "beozip" + lcFileSeparator + "src"));
   }
 
   // ---------------------------------------------------------------------------

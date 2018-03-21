@@ -2,7 +2,7 @@
  * BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
  *
  * Copyright(c) 2001-2018, Beowurks.
- * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/org/documents/epl-2.0/EPL-2.0.html)
+ * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
  *
  */
 
@@ -412,19 +412,19 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.scrListOfArchives1.setPreferredSize(ldSize);
     this.scrListOfArchives1.setMinimumSize(ldSize);
 
-    this.grdListOfArchives1.setupColumns(new Object[][]{{"File Name", ""}, {"Size", Long.valueOf(0)}, {"Last Modified", new Date()}});
+    this.grdListOfArchives1.setupColumns(new Object[][]{{"File Name", ""}, {"Size", 0L}, {"Last Modified", new Date()}});
     this.grdListOfArchives1.setupHeaderRenderer();
 
     this.scrFilesWithinArchiveBZ1.setPreferredSize(new Dimension(MainFrame.ARCHIVE_MEMO_WIDTH, MainFrame.ARCHIVE_MEMO_HEIGHT));
     this.grdFilesWithinArchiveBZ1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    this.grdFilesWithinArchiveBZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", Long.valueOf(0)},
-            {"Ratio (%)", Double.valueOf(0)}, {"Packed", Long.valueOf(0)}, {"CRC-32", Long.valueOf(0)}, {"Method", ""}, {"Path", ""}});
+    this.grdFilesWithinArchiveBZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", 0L},
+            {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
     this.grdFilesWithinArchiveBZ1.setupHeaderRenderer();
 
     this.scrFilesWithinArchiveQZ1.setPreferredSize(new Dimension(MainFrame.ARCHIVE_MEMO_WIDTH, MainFrame.ARCHIVE_MEMO_HEIGHT));
     this.grdFilesWithinArchiveQZ1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    this.grdFilesWithinArchiveQZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", Long.valueOf(0)},
-            {"Ratio (%)", Double.valueOf(0)}, {"Packed", Long.valueOf(0)}, {"CRC-32", Long.valueOf(0)}, {"Method", ""}, {"Path", ""}});
+    this.grdFilesWithinArchiveQZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", 0L},
+            {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
     this.grdFilesWithinArchiveQZ1.setupHeaderRenderer();
   }
 
@@ -1155,7 +1155,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     {
       loCallbackObject = this;
       lmCallbackMethod = this.getClass().getMethod("updateAllComponents", new Class[]{Boolean.class});
-      laParameters = new Object[]{Boolean.valueOf(true)};
+      laParameters = new Object[]{Boolean.TRUE};
     }
     catch (final Exception loErr)
     {
@@ -1415,7 +1415,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     {
       loCallbackObject = this;
       lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", new Class[]{String.class, Integer.class});
-      laParameters = new Object[]{this.fcQuickZipFileName.toString(), Integer.valueOf(MainFrame.TARGET_QUICKZIP)};
+      laParameters = new Object[]{this.fcQuickZipFileName.toString(), MainFrame.TARGET_QUICKZIP};
     }
     catch (final Exception loErr)
     {
@@ -1461,7 +1461,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     {
       loCallbackObject = this;
       lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", new Class[]{String.class, Integer.class});
-      laParameters = new Object[]{this.fcQuickZipFileName.toString(), Integer.valueOf(MainFrame.TARGET_QUICKZIP)};
+      laParameters = new Object[]{this.fcQuickZipFileName.toString(), MainFrame.TARGET_QUICKZIP};
     }
     catch (final Exception loErr)
     {
@@ -1641,7 +1641,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   // ---------------------------------------------------------------------------
   public void updateAllComponents(final Boolean tlUpdateListOfArchives)
   {
-    final boolean llUpdateListOfArchives = tlUpdateListOfArchives.booleanValue();
+    final boolean llUpdateListOfArchives = tlUpdateListOfArchives;
 
     this.buildArchiveFileName();
 
@@ -1665,7 +1665,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   public void populateZipTableWithFilesWithinArchive(final String tcZipFileName, final Integer tnWhichZip)
   {
     ZipTable loZipTable = null;
-    final int lnWhichZip = tnWhichZip.intValue();
+    final int lnWhichZip = tnWhichZip;
 
     int lnInitialSort = -1;
     boolean llInitialAscend = false;
@@ -1699,7 +1699,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     {
       loCallbackObject = this;
       lmCallbackMethod = this.getClass().getMethod("updateAllComponents", new Class[]{Boolean.class});
-      laParameters = new Object[]{Boolean.valueOf(false)};
+      laParameters = new Object[]{Boolean.FALSE};
     }
     catch (final Exception loErr)
     {
@@ -1735,7 +1735,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
           continue;
         }
 
-        loModel.addRow(new Object[]{loList.getName(), Long.valueOf(loList.length()), new Date(loList.lastModified())});
+        loModel.addRow(new Object[]{loList.getName(), loList.length(), new Date(loList.lastModified())});
       }
     }
 
@@ -1833,7 +1833,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
 
       final IAbout loAbout = new AboutAdapter(Util.getTitle(), lcTitleURL,
               loLogo, lcTitleURL,
-              "Eclipse Public License 2.0", "https://opensource.org/licenses/eclipse-2.0.php",
+              "Eclipse Public License 2.0", "https://www.eclipse.org/legal/epl-2.0/",
               2001, "Beowurks", "https://www.beowurks.com/");
 
       new DialogAbout(BaseFrame.getActiveFrame(), loAbout);

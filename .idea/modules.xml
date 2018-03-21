@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BeoZip.iml" filepath="$PROJECT_DIR$/BeoZip.iml" />
-      <module fileurl="file://$PROJECT_DIR$/src/com/BeoZip.iml" filepath="$PROJECT_DIR$/src/com/BeoZip.iml" />
     </modules>
   </component>
 </project>
