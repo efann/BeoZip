@@ -10,26 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/BeoZip.xml" afterPath="$PROJECT_DIR$/.idea/copyright/BeoZip.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/ant/ManifestUpdate-Manual.xml" afterPath="$PROJECT_DIR$/ant/ManifestUpdate-Manual.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/AppProperties.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/AppProperties.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Application.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Application.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ArchiveFoldersDialog1.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ArchiveFoldersDialog1.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseDialog.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseDialog.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseFrame.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileDialogFilter.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileDialogFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileMaskSelectorDialog1.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileMaskSelectorDialog1.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Global.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Global.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ListZipFilesFilter.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ListZipFilesFilter.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/OptionsDialog1.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/OptionsDialog1.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SelectFilesChooser.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SelectFilesChooser.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SplashScreenWindow.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SplashScreenWindow.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/TabbedPaneImage.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/TabbedPaneImage.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/WinXPZipDialog1.java" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/WinXPZipDialog1.java" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -439,19 +421,19 @@
       <workItem from="1521649171309" duration="87000" />
       <workItem from="1521649514833" duration="464000" />
       <workItem from="1521663852906" duration="126000" />
-      <workItem from="1521665215880" duration="612000" />
+      <workItem from="1521665215880" duration="1689000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9969000" />
+    <option name="totallyTimeSpent" value="11046000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -475,7 +457,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928064" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>

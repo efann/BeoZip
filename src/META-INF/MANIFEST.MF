@@ -3,8 +3,8 @@ Ant-Version: Apache Ant 1.9.4
 Created-By: 1.8.0_162-b12 (Oracle Corporation)
 Main-Class: com.beowurks.BeoZip.Application
 Implementation-Vendor: Beowurks
-Implementation-Version: 2018.0.0
+Implementation-Version: 2018.0.3
 Implementation-Title: BeoZip
-Built-On: 2018-03-20 13:23:39
+Built-On: 2018-03-21 17:01:43
 Permissions: all-permissions
 
