@@ -1848,6 +1848,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     loVectorLinks.add(new CreditAdapter("This program was originally written with Eclipse Java IDE.",
         "https://www.eclipse.org/"));
 
+    loVectorLinks.add(new CreditAdapter("For installations, PolyJen uses install4j, the powerful multi-platform installer builder.", "https://www.ej-technologies.com/products/install4j/overview.html"));
+
     loVectorLinks.add(new CreditAdapter("Code examples from the book, Swing, 2nd Edition, by Matthew Robinson & Pavel Vorobiev, gave us great tutorials on Java Swing.",
         "https://www.manning.com/books/swing-second-edition"));
 

@@ -5,6 +5,6 @@ Main-Class: com.beowurks.BeoZip.Application
 Implementation-Vendor: Beowurks
 Implementation-Version: 2019.0.0.6
 Implementation-Title: BeoZip
-Built-On: 2019-08-01 16:30:11
+Built-On: 2019-08-01 16:43:19
 Permissions: all-permissions
 
