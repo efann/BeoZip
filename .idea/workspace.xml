@@ -10,30 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ant.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ant.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/BeoZip_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/BeoZip_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/BeoBasis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/BeoBasis.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BeoZip.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BeoZip.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ant/ManifestUpdate-Manual.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ant/SignApplication-Manual.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jnlp/BeoZip.jnlp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libraries/BeoBasis/BeoBasis-1.35-unsigned.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/install/install.install4j" beforeDir="false" afterPath="$PROJECT_DIR$/install/install.install4j" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/AppProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ArchiveFoldersDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ArchiveFoldersDialog1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileDialogFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileDialogFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileMaskSelectorDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileMaskSelectorDialog1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Global.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ListZipFilesFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ListZipFilesFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/OptionsDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/OptionsDialog1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SelectFilesChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SelectFilesChooser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SplashScreenWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SplashScreenWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/TabbedPaneImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/TabbedPaneImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/WinXPZipDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/WinXPZipDialog1.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,6 +51,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../BeoBasis/BeoBasis-unsigned.jar!/" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -160,7 +147,7 @@
       <workItem from="1521663852906" duration="126000" />
       <workItem from="1521665215880" duration="1689000" />
       <workItem from="1521670128929" duration="54000" />
-      <workItem from="1564685567581" duration="1091000" />
+      <workItem from="1564685567581" duration="3040000" />
     </task>
     <servers />
   </component>
