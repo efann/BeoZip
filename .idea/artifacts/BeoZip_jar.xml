@@ -1,15 +1,21 @@
 <component name="ArtifactManager">
   <artifact type="jar" name="BeoZip:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/BeoZip</output-path>
+    <properties id="ant-postprocessing">
+      <options enabled="true">
+        <file>file://$PROJECT_DIR$/ant/SignApplication.xml</file>
+        <target>build</target>
+      </options>
+    </properties>
     <properties id="ant-preprocessing">
       <options enabled="true">
-        <file>file://$PROJECT_DIR$/ant/ManifestUpdate-Manual.xml</file>
+        <file>file://$PROJECT_DIR$/ant/ManifestSetupUpdate.xml</file>
         <target>build</target>
       </options>
     </properties>
     <root id="archive" name="BeoZip.jar">
       <element id="module-output" name="BeoZip" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/libraries/BeoBasis/BeoBasis-1.35-unsigned.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../BeoBasis/BeoBasis-unsigned.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

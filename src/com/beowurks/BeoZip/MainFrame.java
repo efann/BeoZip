@@ -1,7 +1,7 @@
 /*
  * BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
  *
- * Copyright(c) 2001-2018, Beowurks.
+ * Copyright(c) 2001-2019, Beowurks.
  * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
  *
  */
@@ -19,6 +19,8 @@ import com.beowurks.BeoCommon.Dialogs.Credits.DialogCredits;
 import com.beowurks.BeoCommon.Dialogs.Credits.ICredit;
 import com.beowurks.BeoCommon.GridBagLayoutHelper;
 import com.beowurks.BeoCommon.Util;
+import com.beowurks.BeoDesktop.DesktopHelper;
+import com.beowurks.BeoDesktop.IDesktopAdapter;
 import com.beowurks.BeoLookFeel.LFDialog;
 import com.beowurks.BeoTable.SortingTable;
 import com.beowurks.BeoTable.SortingTableModel;
@@ -30,9 +32,13 @@ import com.beowurks.BeoZippin.ThreadPopulateZipTable;
 import com.beowurks.BeoZippin.ThreadTest;
 import com.beowurks.BeoZippin.ZipComment;
 import com.beowurks.BeoZippin.ZipTable;
-import com.beowurks.apple.eawt.IOSXAdapter;
-import com.beowurks.apple.eawt.OSXAdapterHelper;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.table.TableColumnModel;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
@@ -46,6 +52,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -54,18 +61,11 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.border.EtchedBorder;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import javax.swing.table.TableColumnModel;
-
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
 public class MainFrame extends BeoZipBaseFrame implements ActionListener, ChangeListener, MouseMotionListener, KeyListener, MouseListener,
-        IZipProgressComponents, IOSXAdapter
+    IZipProgressComponents, IDesktopAdapter
 {
   protected static final int TARGET_BEOZIP = 0;
   protected static final int TARGET_QUICKZIP = 1;
@@ -239,8 +239,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
 
     this.foSplash.setProgressBar(150, "Initializing completed...");
 
-    // Only sets up if running on a Mac.
-    OSXAdapterHelper.setupOSXAdapter(this);
+    DesktopHelper.setupDesktop(this);
   }
 
   // ---------------------------------------------------------------------------
@@ -418,13 +417,13 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.scrFilesWithinArchiveBZ1.setPreferredSize(new Dimension(MainFrame.ARCHIVE_MEMO_WIDTH, MainFrame.ARCHIVE_MEMO_HEIGHT));
     this.grdFilesWithinArchiveBZ1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     this.grdFilesWithinArchiveBZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", 0L},
-            {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
+        {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
     this.grdFilesWithinArchiveBZ1.setupHeaderRenderer();
 
     this.scrFilesWithinArchiveQZ1.setPreferredSize(new Dimension(MainFrame.ARCHIVE_MEMO_WIDTH, MainFrame.ARCHIVE_MEMO_HEIGHT));
     this.grdFilesWithinArchiveQZ1.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
     this.grdFilesWithinArchiveQZ1.setupColumns(new Object[][]{{"File Name", ""}, {"Modified", new Date()}, {"Size", 0L},
-            {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
+        {"Ratio (%)", (double) 0}, {"Packed", 0L}, {"CRC-32", 0L}, {"Method", ""}, {"Path", ""}});
     this.grdFilesWithinArchiveQZ1.setupHeaderRenderer();
   }
 
@@ -457,7 +456,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.txtActionCurrentFile1.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 
     final Dimension ldReducedSize = new Dimension(MainFrame.ARCHIVE_MEMO_WIDTH_THIRD, (int) this.txtRestoreFileNameBZ1.getPreferredSize()
-            .getHeight());
+        .getHeight());
 
     this.txtArchiveSearchPath1.setText(" ");
     this.txtArchiveSearchPath1.setPreferredSize(ldReducedSize);
@@ -786,13 +785,25 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
 
     this.grdListOfArchives1.addKeyListener(this);
     this.grdListOfArchives1.addMouseListener(this);
+
+    this.addWindowListener(new WindowAdapter()
+    {
+      // By the way, WINDOW_CLOSING is never passed to super.processWindowEvent.
+      // So you have to override windowClosing.
+      @Override
+      public void windowClosing(final WindowEvent teWindowEvent)
+      {
+        MainFrame.this.performShutdownMaintenance();
+      }
+    });
+
   }
 
   // ---------------------------------------------------------------------------
   private void setFoldersToArchiveToolTip()
   {
     this.btnFoldersToArchive1.setToolTipText("<html>The following folders are currently used for archiving:<br><br><i>"
-            + this.getFoldersToArchiveListing(true) + "</i></html>");
+        + this.getFoldersToArchiveListing(true) + "</i></html>");
   }
 
   // ---------------------------------------------------------------------------
@@ -822,25 +833,10 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.menuTest1.setEnabled(llBeoZipActive || llQuickZipActive);
 
     final boolean llMenuSelectEnabled = ((llBeoZipActive && (this.grdFilesWithinArchiveBZ1.getRowCount() > 0)) || (llQuickZipActive && (this.grdFilesWithinArchiveQZ1
-            .getRowCount() > 0)));
+        .getRowCount() > 0)));
     this.menuSelectAll1.setEnabled(llMenuSelectEnabled);
     this.menuClearSelect1.setEnabled(llMenuSelectEnabled);
     this.menuSelectDeselect1.setEnabled(llMenuSelectEnabled);
-  }
-
-  // ---------------------------------------------------------------------------
-  // Overridden so we can exit when window is closed
-  @Override
-  protected void processWindowEvent(final WindowEvent e)
-  {
-    super.processWindowEvent(e);
-
-    switch (e.getID())
-    {
-      case WindowEvent.WINDOW_CLOSING:
-        this.performShutdownMaintenance();
-        break;
-    }
   }
 
   // ---------------------------------------------------------------------------
@@ -889,7 +885,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
 
     if (lcCommand.equals(this.menuExit1.getActionCommand()))
     {
-      this.performShutdownMaintenance();
+      this.closeWindow();
     }
     else if (lcCommand.equals(this.menuLookFeel1.getActionCommand()))
     {
@@ -1100,8 +1096,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   private void pushButtonArchivesLocation()
   {
     final SelectFileReturnValue loValue = this.foSelectFilesChooser.selectFileDialog(this.foAppProperties.getArchivesLocation(),
-            JFileChooser.DIRECTORIES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false, "Select Archives' Location",
-            "Select Folder", SelectFilesChooser.ACCESSORY_NONE);
+        JFileChooser.DIRECTORIES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false, "Select Archives' Location",
+        "Select Folder", SelectFilesChooser.ACCESSORY_NONE);
 
     if (loValue != null)
     {
@@ -1167,8 +1163,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     final ThreadCompile loThread = new ThreadCompile(this, this, loFile, this.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(),
-            this.foAppProperties.getOptionIncludeHiddenFilesBZ(), this.foAppProperties.getOptionCompressionLevelBZ(), laFoldersToArchive,
-            ZipComment.buildBeoZipComment(laFoldersToArchive), loCallbackObject, lmCallbackMethod, laParameters);
+        this.foAppProperties.getOptionIncludeHiddenFilesBZ(), this.foAppProperties.getOptionCompressionLevelBZ(), laFoldersToArchive,
+        ZipComment.buildBeoZipComment(laFoldersToArchive), loCallbackObject, lmCallbackMethod, laParameters);
     loThread.start();
   }
 
@@ -1176,8 +1172,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   private void pushButtonNew()
   {
     final SelectFileReturnValue loValue = this.foSelectFilesChooser.selectFileDialog(this.foAppProperties.getPushButtonOpenFolderQZ(),
-            JFileChooser.FILES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
-            this.foAppProperties.getOptionIncludeHiddenFilesQZ(), true, "New Archive File", "Create", SelectFilesChooser.ACCESSORY_NONE);
+        JFileChooser.FILES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
+        this.foAppProperties.getOptionIncludeHiddenFilesQZ(), true, "New Archive File", "Create", SelectFilesChooser.ACCESSORY_NONE);
 
     if (loValue != null)
     {
@@ -1232,8 +1228,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   private void pushButtonOpen()
   {
     final SelectFileReturnValue loValue = this.foSelectFilesChooser.selectFileDialog(this.foAppProperties.getPushButtonOpenFolderQZ(),
-            JFileChooser.FILES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
-            this.foAppProperties.getOptionIncludeHiddenFilesQZ(), true, "Select Archive File", "Open", SelectFilesChooser.ACCESSORY_NONE);
+        JFileChooser.FILES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
+        this.foAppProperties.getOptionIncludeHiddenFilesQZ(), true, "Select Archive File", "Open", SelectFilesChooser.ACCESSORY_NONE);
 
     if (loValue != null)
     {
@@ -1284,14 +1280,14 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     loComboBox.setSelectedIndex(lnSelected);
 
     final int lnResults = JOptionPane.showConfirmDialog(this, new Object[]{new JLabel("Restore To Drive:"), loComboBox}, "Select Restore Drive",
-            JOptionPane.OK_CANCEL_OPTION);
+        JOptionPane.OK_CANCEL_OPTION);
 
     if (lnResults == JOptionPane.OK_OPTION)
     {
       this.foAppProperties.setBeoZipRestorePath(loComboBox.getSelectedItem().toString());
 
       final ThreadExtract loThread = new ThreadExtract(this, this, this.fcBeoZipRestoreFileName.toString(), this.grdFilesWithinArchiveBZ1,
-              this.foAppProperties.getBeoZipRestorePath(), true, true);
+          this.foAppProperties.getBeoZipRestorePath(), true, true);
       loThread.start();
     }
   }
@@ -1306,12 +1302,12 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     this.foAppProperties
-            .setOptionExtractionSelectAllFiles(((this.grdFilesWithinArchiveQZ1.getSelectedRowCount() == 0) || (this.grdFilesWithinArchiveQZ1
-                    .getSelectedRowCount() == this.grdFilesWithinArchiveQZ1.getRowCount())));
+        .setOptionExtractionSelectAllFiles(((this.grdFilesWithinArchiveQZ1.getSelectedRowCount() == 0) || (this.grdFilesWithinArchiveQZ1
+            .getSelectedRowCount() == this.grdFilesWithinArchiveQZ1.getRowCount())));
 
     final SelectFileReturnValue loValue = this.foSelectFilesChooser.selectFileDialog(this.foAppProperties.getPushButtonExtractFolderQZ(),
-            JFileChooser.DIRECTORIES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false, "Extract Files", "Extract",
-            SelectFilesChooser.ACCESSORY_EXTRACTION);
+        JFileChooser.DIRECTORIES_ONLY, false, this.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false, "Extract Files", "Extract",
+        SelectFilesChooser.ACCESSORY_EXTRACTION);
     if (loValue != null)
     {
       final String lcFolder = loValue.SelectedFile.getPath();
@@ -1319,8 +1315,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
       this.foAppProperties.setPushButtonExtractFolderQZ(lcFolder);
 
       final ThreadExtract loThread = new ThreadExtract(this, this, this.fcQuickZipFileName.toString(), this.grdFilesWithinArchiveQZ1,
-              this.foAppProperties.getPushButtonExtractFolderQZ(), this.foAppProperties.getOptionExtractionUsePathNames(),
-              this.foAppProperties.getOptionExtractionOverWriteFiles());
+          this.foAppProperties.getPushButtonExtractFolderQZ(), this.foAppProperties.getOptionExtractionUsePathNames(),
+          this.foAppProperties.getOptionExtractionOverWriteFiles());
       loThread.start();
     }
   }
@@ -1331,9 +1327,9 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     if (!this.isBeoZipRestoreFileNameSet())
     {
       Util.errorMessage(
-              this,
-              new JLabel(
-                      "<html><font face=\"Arial\">Please select an archive file from which the <i>Folders To Archive</i> information can be gleaned.<br></font></html>"));
+          this,
+          new JLabel(
+              "<html><font face=\"Arial\">Please select an archive file from which the <i>Folders To Archive</i> information can be gleaned.<br></font></html>"));
       return;
     }
 
@@ -1344,16 +1340,16 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     if (laFolders == null)
     {
       Util.errorMessage(
-              this,
-              new JLabel(
-                      "<html><font face=\"Arial\">Unfortunately, the file of <i><b>"
-                              + lcFileName
-                              + "</b></i> was either not created with this version of BeoZip<br>or has been altered outside of BeoZip in some way.<br><br>Therefore, it cannot be used to rescue the <i>Folders To Archive</i> listing.<br><br></font></html>"));
+          this,
+          new JLabel(
+              "<html><font face=\"Arial\">Unfortunately, the file of <i><b>"
+                  + lcFileName
+                  + "</b></i> was either not created with this version of BeoZip<br>or has been altered outside of BeoZip in some way.<br><br>Therefore, it cannot be used to rescue the <i>Folders To Archive</i> listing.<br><br></font></html>"));
       return;
     }
 
     if (!Util.yesNo(this, new JLabel("<html><font face=\"Arial\">Using the zip file of <i><b>" + lcFileName
-            + "</b></i>,<br>do you want to rescue the <i>Folders To Archive</i> listing?<br><br></font></html>")))
+        + "</b></i>,<br>do you want to rescue the <i>Folders To Archive</i> listing?<br><br></font></html>")))
     {
       return;
     }
@@ -1361,9 +1357,9 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.foAppProperties.setGridFoldersToArchive(laFolders);
 
     Util.infoMessage(
-            this,
-            new JLabel("<html><font face=\"Arial\">Now the current list of folder(s) to archive is as follows:<br><br>"
-                    + this.getFoldersToArchiveListing(true) + "<br></font></html>"));
+        this,
+        new JLabel("<html><font face=\"Arial\">Now the current list of folder(s) to archive is as follows:<br><br>"
+            + this.getFoldersToArchiveListing(true) + "<br></font></html>"));
 
   }
 
@@ -1386,8 +1382,8 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     final SelectFileReturnValue loValue = this.foSelectFilesChooser.selectFileDialog(this.foAppProperties.getPushButtonAddFolderQZ(),
-            JFileChooser.FILES_ONLY, true, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
-            this.foAppProperties.getOptionIncludeHiddenFilesQZ(), false, "File(s) To Be Archived", "Add File(s)", SelectFilesChooser.ACCESSORY_QUICKZIP);
+        JFileChooser.FILES_ONLY, true, this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
+        this.foAppProperties.getOptionIncludeHiddenFilesQZ(), false, "File(s) To Be Archived", "Add File(s)", SelectFilesChooser.ACCESSORY_QUICKZIP);
 
     if (loValue == null)
     {
@@ -1427,9 +1423,9 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     final ThreadCompile loThread = new ThreadCompile(this, this, new File(this.fcQuickZipFileName.toString()),
-            this.foAppProperties.getOptionIncludeSubFoldersQZ(), this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
-            this.foAppProperties.getOptionIncludeHiddenFilesQZ(), this.foAppProperties.getOptionSavePathInformationQZ(),
-            this.foAppProperties.getOptionCompressionLevelQZ(), laFiles, loCallbackObject, lmCallbackMethod, laParameters);
+        this.foAppProperties.getOptionIncludeSubFoldersQZ(), this.foAppProperties.getOptionIncludeHiddenDirectoriesQZ(),
+        this.foAppProperties.getOptionIncludeHiddenFilesQZ(), this.foAppProperties.getOptionSavePathInformationQZ(),
+        this.foAppProperties.getOptionCompressionLevelQZ(), laFiles, loCallbackObject, lmCallbackMethod, laParameters);
 
     loThread.start();
   }
@@ -1473,7 +1469,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     final ThreadDelete loThread = new ThreadDelete(this, this, new File(this.fcQuickZipFileName.toString()), this.grdFilesWithinArchiveQZ1,
-            this.foAppProperties.getOptionCompressionLevelQZ(), loCallbackObject, lmCallbackMethod, laParameters);
+        this.foAppProperties.getOptionCompressionLevelQZ(), loCallbackObject, lmCallbackMethod, laParameters);
 
     loThread.start();
   }
@@ -1711,7 +1707,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     }
 
     final ThreadPopulateZipTable loThread = new ThreadPopulateZipTable(this, tcZipFileName, loZipTable, lnInitialSort, llInitialAscend, true,
-            loCallbackObject, lmCallbackMethod, laParameters);
+        loCallbackObject, lmCallbackMethod, laParameters);
 
     loThread.start();
   }
@@ -1744,7 +1740,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     final int lnColumn = llLoadFromProperties ? this.foAppProperties.getGridListOfArchivesSort() : loModel.getSortColumn();
 
     this.grdListOfArchives1.sortColumn(lnColumn, false, llLoadFromProperties ? this.foAppProperties.getGridListOfArchivesAscending()
-            : this.grdListOfArchives1.getSortButtonRenderer().isCurrentColumnAscending());
+        : this.grdListOfArchives1.getSortButtonRenderer().isCurrentColumnAscending());
 
     this.grdListOfArchives1.autoFitAllColumns();
   }
@@ -1832,9 +1828,9 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
       final String lcTitleURL = "http://beozip.sourceforge.net/";
 
       final IAbout loAbout = new AboutAdapter(Util.getTitle(), lcTitleURL,
-              loLogo, lcTitleURL,
-              "Eclipse Public License 2.0", "https://www.eclipse.org/legal/epl-2.0/",
-              2001, "Beowurks", "https://www.beowurks.com/");
+          loLogo, lcTitleURL,
+          "Eclipse Public License 2.0", "https://www.eclipse.org/legal/epl-2.0/",
+          2001, "Beowurks", "https://www.beowurks.com/");
 
       new DialogAbout(BaseFrame.getActiveFrame(), loAbout);
     }
@@ -1850,10 +1846,10 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     final Vector<ICredit> loVectorLinks = new Vector<>();
 
     loVectorLinks.add(new CreditAdapter("This program was originally written with Eclipse Java IDE.",
-            "https://www.eclipse.org/"));
+        "https://www.eclipse.org/"));
 
     loVectorLinks.add(new CreditAdapter("Code examples from the book, Swing, 2nd Edition, by Matthew Robinson & Pavel Vorobiev, gave us great tutorials on Java Swing.",
-            "https://www.manning.com/books/swing-second-edition"));
+        "https://www.manning.com/books/swing-second-edition"));
 
     new DialogCredits(this, loVectorLinks);
   }
@@ -2061,19 +2057,12 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
 
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
-  // Interface IOSXAdapter
-  // These routines are only called when a user selects from Mac OS X application menu.
+  // Interface IDesktopAdapter
+  // ---------------------------------------------------------------------------
   @Override
   public void AboutHandler()
   {
     this.showAbout();
-  }
-
-  // ---------------------------------------------------------------------------
-  @Override
-  public void FileHandler(final String tcFileName)
-  {
-    this.pushButtonOpen();
   }
 
   // ---------------------------------------------------------------------------
@@ -2088,7 +2077,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   @Override
   public void QuitHandler()
   {
-    this.performShutdownMaintenance();
+    this.closeWindow();
   }
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------

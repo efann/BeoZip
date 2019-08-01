@@ -1,7 +1,7 @@
 /*
  * BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
  *
- * Copyright(c) 2001-2018, Beowurks.
+ * Copyright(c) 2001-2019, Beowurks.
  * License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
  *
  */

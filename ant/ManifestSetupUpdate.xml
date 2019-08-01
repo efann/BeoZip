@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!--
+  ~ BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
+  ~
+  ~ Copyright(c) 2001-2019, Beowurks.
+  ~ License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
+  ~
+  -->
+
+<project name="ManifestSetupUpdate" default="build" basedir="..//">
+
+  <property name="dirs.base" value="${basedir}"/>
+
+  <property name="Beo.Install4J" value="${dirs.base}/install/install.install4j"/>
+
+  <tstamp>
+    <format property="build.time.isoformat" pattern="yyyy-MM-dd HH:mm:ss"/>
+  </tstamp>
+
+  <target depends="getInformation, buildManifest" name="build"/>
+
+  <target name="getInformation">
+    <echo message="===================================================================" level="info" />
+    <echo message="REMEMBER: You're pulling these values from install4j settings file." level="info" />
+    <echo message="===================================================================" level="info" />
+
+    <xmlproperty file="${Beo.Install4J}" collapseAttributes="true" prefix="Prefix"/>
+    <!--
+      Ignore the red highlights that state ${Prefix.*} do not exist: they exist inside the XML file.
+    -->
+    <property name="Beo.Title" value="${Prefix.install4j.application.shortName}"/>
+    <property name="Beo.Version" value="${Prefix.install4j.application.version}"/>
+    <property name="Beo.Vendor" value="${Prefix.install4j.application.publisher}"/>
+    <property name="Beo.AppClass" value="${Prefix.install4j.launchers.launcher.java.mainClass}"/>
+
+    <echo message="Title from install4j: ${Beo.Title}" level="info"/>
+    <echo message="Version from install4j: ${Beo.Version}" level="info"/>
+    <echo message="Vendor from install4j: ${Beo.Vendor}" level="info"/>
+    <echo message="App Class from install4j: ${Beo.AppClass}" level="info"/>
+
+    <condition property="bad-class">
+      <contains substring="," string="${Beo.AppClass}"/>
+    </condition>
+    <fail message="Beo.AppClass has commas due to multiple launchers.launcher.java.mainClass: ${Beo.AppClass}"
+          if="bad-class"/>
+  </target>
+
+  <!-- Recreate the manifest for the project -->
+  <target name="buildManifest">
+    <manifest file="${dirs.base}/src/META-INF/MANIFEST.MF">
+      <attribute name="Manifest-Version" value="1.0"/>
+      <attribute name="Main-Class" value="${Beo.AppClass}"/>
+      <attribute name="Implementation-Vendor" value="${Beo.Vendor}"/>
+      <attribute name="Implementation-Version" value="${Beo.Version}"/>
+      <attribute name="Implementation-Title" value="${Beo.Title}"/>
+      <attribute name="Built-On" value="${build.time.isoformat}"/>
+      <attribute name="Permissions" value="all-permissions"/>
+    </manifest>
+  </target>
+
+</project>

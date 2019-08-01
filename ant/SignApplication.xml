@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 
+<!--
+  ~ BeoZip : a simple archiving application for the Java(tm) Swing platform previously written in C++.
+  ~
+  ~ Copyright(c) 2001-2019, Beowurks.
+  ~ License: Eclipse Public License - v 2.0 (https://www.eclipse.org/legal/epl-2.0/)
+  ~
+  -->
+
 <project name="SignApplication-Manual" default="build" basedir="..//">
 
   <property name="dirs.base" value="${basedir}"/>
