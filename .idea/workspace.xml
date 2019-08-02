@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install/install.install4j" beforeDir="false" afterPath="$PROJECT_DIR$/install/install.install4j" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" afterDir="false" />
     </list>
@@ -146,6 +147,7 @@
       <workItem from="1521665215880" duration="1689000" />
       <workItem from="1521670128929" duration="54000" />
       <workItem from="1564685567581" duration="4673000" />
+      <workItem from="1564758665976" duration="3450000" />
     </task>
     <servers />
   </component>
@@ -157,7 +159,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

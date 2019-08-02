@@ -120,7 +120,6 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   private final JMenuItem menuLookFeel1 = new JMenuItem();
   private final JMenuItem menuOptions1 = new JMenuItem();
   private final JMenuItem menuWinXPZip1 = new JMenuItem();
-  private final JMenuItem menuJavaManager1 = new JMenuItem();
 
   private final JMenuItem menuCredits1 = new JMenuItem();
   private final JMenuItem menuDocumentation1 = new JMenuItem();
@@ -660,9 +659,6 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     this.menuWinXPZip1.setMnemonic('Z');
     this.menuWinXPZip1.setToolTipText("Enable/disable Windows XP zip support");
 
-    this.menuJavaManager1.setText("Java Application Manager");
-    this.menuJavaManager1.setToolTipText("Launch the Java Application Manager");
-
     // ----
     this.menuHelp1.setText("Help");
     this.menuHelp1.setMnemonic('H');
@@ -732,8 +728,6 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
       this.menuTools1.add(this.menuWinXPZip1);
       this.menuTools1.addSeparator();
     }
-
-    this.menuTools1.add(this.menuJavaManager1);
 
     this.menuHelp1.add(this.menuCredits1);
     this.menuHelp1.addSeparator();
@@ -1015,10 +1009,6 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     else if (lcCommand.equals(this.menuWinXPZip1.getActionCommand()))
     {
       new WinXPZipDialog1(this, "Windows XP Zip Support");
-    }
-    else if (lcCommand.equals(this.menuJavaManager1.getActionCommand()))
-    {
-      Util.launchJavaApplicationManager();
     }
     else if (lcCommand.equals(this.menuTest1.getActionCommand()))
     {
