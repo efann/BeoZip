@@ -10,11 +10,10 @@ package com.beowurks.BeoZip;
 
 import com.beowurks.BeoCommon.BaseTabbedPane;
 
-import java.awt.FontMetrics;
-
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.plaf.basic.BasicTabbedPaneUI;
+import java.awt.FontMetrics;
 
 // If you don't create this subclass and the Look and Feel changes,
 // the SideTabbedPaneUI gets changed back to the default UI and

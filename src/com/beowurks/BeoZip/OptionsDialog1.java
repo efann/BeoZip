@@ -13,6 +13,12 @@ import com.beowurks.BeoCommon.BaseProperties;
 import com.beowurks.BeoCommon.BaseTabbedPane;
 import com.beowurks.BeoCommon.GridBagLayoutHelper;
 
+import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.SoftBevelBorder;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Dimension;
@@ -21,23 +27,6 @@ import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Enumeration;
-
-import javax.swing.AbstractButton;
-import javax.swing.Box;
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.SwingConstants;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.SoftBevelBorder;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -71,8 +60,8 @@ public class OptionsDialog1 extends BeoZipBaseDialog implements ActionListener
   private final Box boxButtons1 = Box.createHorizontalBox();
 
   private final String[] faCompression = new String[]{"No Compression", "Level 1, Least Compression & Fastest",
-          "Level 2", "Level 3", "Level 4", "Level 5, Okay Compression & Speed", "Level 6 (Default)", "Level 7", "Level 8",
-          "Level 9, Best Compression & Slowest"};
+      "Level 2", "Level 3", "Level 4", "Level 5, Okay Compression & Speed", "Level 6 (Default)", "Level 7", "Level 8",
+      "Level 9, Best Compression & Slowest"};
 
   private ArchiveFileNameParameters[] faArchiveParameters = null;
 
@@ -218,7 +207,7 @@ public class OptionsDialog1 extends BeoZipBaseDialog implements ActionListener
       final AbstractButton loAbstractButton = loE.nextElement();
       if (loAbstractButton instanceof JRadioButton)
       {
-        ((JRadioButton) loAbstractButton).addActionListener(this);
+        loAbstractButton.addActionListener(this);
       }
     }
   }
@@ -377,7 +366,7 @@ public class OptionsDialog1 extends BeoZipBaseDialog implements ActionListener
       final AbstractButton loAbstractButton = loE.nextElement();
       if (loAbstractButton instanceof JRadioButton)
       {
-        ((JRadioButton) loAbstractButton).removeActionListener(this);
+        loAbstractButton.removeActionListener(this);
       }
     }
   }

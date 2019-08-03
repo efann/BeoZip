@@ -13,17 +13,6 @@ import com.beowurks.BeoCommon.BaseProperties;
 import com.beowurks.BeoCommon.GridBagLayoutHelper;
 import com.beowurks.BeoCommon.Util;
 
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.GridBagConstraints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Enumeration;
-
 import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -36,6 +25,16 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.SoftBevelBorder;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Enumeration;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -161,7 +160,7 @@ public class WinXPZipDialog1 extends BeoZipBaseDialog implements ActionListener
       final AbstractButton loAbstractButton = loE.nextElement();
       if (loAbstractButton instanceof JRadioButton)
       {
-        ((JRadioButton) loAbstractButton).addActionListener(this);
+        loAbstractButton.addActionListener(this);
       }
     }
   }
@@ -258,7 +257,7 @@ public class WinXPZipDialog1 extends BeoZipBaseDialog implements ActionListener
       final AbstractButton loAbstractButton = loE.nextElement();
       if (loAbstractButton instanceof JRadioButton)
       {
-        ((JRadioButton) loAbstractButton).removeActionListener(this);
+        loAbstractButton.removeActionListener(this);
       }
     }
   }

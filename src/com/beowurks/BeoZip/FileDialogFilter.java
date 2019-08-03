@@ -10,9 +10,8 @@ package com.beowurks.BeoZip;
 
 import com.beowurks.BeoCommon.Util;
 
-import java.io.File;
-
 import javax.swing.JFileChooser;
+import java.io.File;
 
 // By the way, FileDialogFilter and ListZipFilesFilter are different:
 // ListZipFilesFilter uses the interface of java.io.FileFilter
@@ -51,12 +50,7 @@ class FileDialogFilter extends javax.swing.filechooser.FileFilter
     {
       // Remember: you will always display the file folders (unless hidden)
       // no matter what the fnFileSelectionMode is.
-      if ((toFile.isHidden()) && (!this.flHiddenDirectories))
-      {
-        return (false);
-      }
-
-      return (true);
+      return (!toFile.isHidden()) || (this.flHiddenDirectories);
     }
 
     // Only reaches this area of the code if the file is not a directory.

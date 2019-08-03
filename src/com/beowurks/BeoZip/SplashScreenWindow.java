@@ -10,11 +10,6 @@ package com.beowurks.BeoZip;
 
 import com.beowurks.BeoCommon.GridBagLayoutHelper;
 
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.Toolkit;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -22,6 +17,10 @@ import javax.swing.JProgressBar;
 import javax.swing.JWindow;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EtchedBorder;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.Toolkit;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------

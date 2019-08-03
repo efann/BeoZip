@@ -772,7 +772,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
         if (loItem instanceof JMenuItem)
         {
           ((JMenuItem) loItem).addActionListener(this);
-          ((JMenuItem) loItem).addMouseMotionListener(this);
+          loItem.addMouseMotionListener(this);
         }
       }
     }
@@ -1140,7 +1140,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     try
     {
       loCallbackObject = this;
-      lmCallbackMethod = this.getClass().getMethod("updateAllComponents", new Class[]{Boolean.class});
+      lmCallbackMethod = this.getClass().getMethod("updateAllComponents", Boolean.class);
       laParameters = new Object[]{Boolean.TRUE};
     }
     catch (final Exception loErr)
@@ -1400,7 +1400,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     try
     {
       loCallbackObject = this;
-      lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", new Class[]{String.class, Integer.class});
+      lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", String.class, Integer.class);
       laParameters = new Object[]{this.fcQuickZipFileName.toString(), MainFrame.TARGET_QUICKZIP};
     }
     catch (final Exception loErr)
@@ -1446,7 +1446,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     try
     {
       loCallbackObject = this;
-      lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", new Class[]{String.class, Integer.class});
+      lmCallbackMethod = this.getClass().getMethod("populateZipTableWithFilesWithinArchive", String.class, Integer.class);
       laParameters = new Object[]{this.fcQuickZipFileName.toString(), MainFrame.TARGET_QUICKZIP};
     }
     catch (final Exception loErr)
@@ -1684,7 +1684,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     try
     {
       loCallbackObject = this;
-      lmCallbackMethod = this.getClass().getMethod("updateAllComponents", new Class[]{Boolean.class});
+      lmCallbackMethod = this.getClass().getMethod("updateAllComponents", Boolean.class);
       laParameters = new Object[]{Boolean.FALSE};
     }
     catch (final Exception loErr)
@@ -1838,7 +1838,10 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     loVectorLinks.add(new CreditAdapter("This program was originally written with Eclipse Java IDE.",
         "https://www.eclipse.org/"));
 
-    loVectorLinks.add(new CreditAdapter("For installations, PolyJen uses install4j, the powerful multi-platform installer builder.", "https://www.ej-technologies.com/products/install4j/overview.html"));
+    loVectorLinks.add(new CreditAdapter("Now we use IntelliJ IDEA.",
+        "https://www.jetbrains.com/idea/"));
+
+    loVectorLinks.add(new CreditAdapter("For installations, BeoZip uses install4j, the powerful multi-platform installer builder.", "https://www.ej-technologies.com/products/install4j/overview.html"));
 
     loVectorLinks.add(new CreditAdapter("Code examples from the book, Swing, 2nd Edition, by Matthew Robinson & Pavel Vorobiev, gave us great tutorials on Java Swing.",
         "https://www.manning.com/books/swing-second-edition"));

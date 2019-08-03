@@ -13,17 +13,6 @@ import com.beowurks.BeoCommon.BaseProperties;
 import com.beowurks.BeoCommon.GridBagLayoutHelper;
 import com.beowurks.BeoZippin.ZipTable;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Vector;
-import java.util.regex.Pattern;
-
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
@@ -31,6 +20,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.Comparator;
+import java.util.Vector;
+import java.util.regex.Pattern;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -463,7 +461,7 @@ public class FileMaskSelectorDialog1 extends BeoZipBaseDialog implements ActionL
 
     final String lcMask = this.getFileMask();
     final int lnAction = this.getSelectAction();
-    final boolean llSelect = (lnAction == FileMaskSelectorDialog1.ACTION_SELECT) ? true : false;
+    final boolean llSelect = lnAction == FileMaskSelectorDialog1.ACTION_SELECT;
 
     this.setPattern(lcMask);
     final int lnRows = this.foZipTable.getRowCount();

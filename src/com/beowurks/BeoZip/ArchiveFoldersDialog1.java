@@ -15,11 +15,6 @@ import com.beowurks.BeoCommon.Util;
 import com.beowurks.BeoTable.SortingTable;
 import com.beowurks.BeoTable.SortingTableModel;
 
-import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
@@ -28,6 +23,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -198,8 +197,8 @@ public class ArchiveFoldersDialog1 extends BeoZipBaseDialog implements ActionLis
   private void addToFoldersToArchive()
   {
     final SelectFileReturnValue loValue = this.foMainFrame.foSelectFilesChooser.selectFileDialog(this.fcAddFolderLocation.toString(),
-            JFileChooser.DIRECTORIES_ONLY, false, this.foMainFrame.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false,
-            "Add Folder To Be Archived", "Add Folder", SelectFilesChooser.ACCESSORY_NONE);
+        JFileChooser.DIRECTORIES_ONLY, false, this.foMainFrame.foAppProperties.getOptionIncludeHiddenDirectoriesBZ(), false, false,
+        "Add Folder To Be Archived", "Add Folder", SelectFilesChooser.ACCESSORY_NONE);
 
     if (loValue != null)
     {

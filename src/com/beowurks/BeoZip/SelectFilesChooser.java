@@ -11,6 +11,12 @@ package com.beowurks.BeoZip;
 import com.beowurks.BeoCommon.BaseButton;
 import com.beowurks.BeoCommon.Util;
 
+import javax.swing.Box;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 import java.awt.Cursor;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,13 +24,6 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-
-import javax.swing.Box;
-import javax.swing.JCheckBox;
-import javax.swing.JComponent;
-import javax.swing.JFileChooser;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------
@@ -77,20 +76,20 @@ public class SelectFilesChooser implements ActionListener
     this.pnlAccessory1.setLayout(new GridBagLayout());
 
     this.pnlAccessory1.add(this.chkIncludeSubFolders1, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-            new Insets(4, 4, 4, 4), 4, 4));
+        new Insets(4, 4, 4, 4), 4, 4));
     this.pnlAccessory1.add(this.chkSavePathInformation1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST,
-            GridBagConstraints.NONE, new Insets(4, 4, 20, 4), 4, 4));
+        GridBagConstraints.NONE, new Insets(4, 4, 20, 4), 4, 4));
     this.pnlAccessory1.add(this.boxButtons1, new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-            new Insets(20, 4, 4, 4), 4, 4));
+        new Insets(20, 4, 4, 4), 4, 4));
 
     this.pnlAccessory2.setLayout(new GridBagLayout());
 
     this.pnlAccessory2.add(this.chkSelectAllFiles1, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-            new Insets(4, 4, 4, 4), 4, 4));
+        new Insets(4, 4, 4, 4), 4, 4));
     this.pnlAccessory2.add(this.chkUsePathNames1, new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-            new Insets(4, 4, 4, 4), 4, 4));
+        new Insets(4, 4, 4, 4), 4, 4));
     this.pnlAccessory2.add(this.chkOverwriteFiles1, new GridBagConstraints(0, 2, 1, 1, 0.0, 0.0, GridBagConstraints.WEST, GridBagConstraints.NONE,
-            new Insets(4, 4, 20, 4), 4, 4));
+        new Insets(4, 4, 20, 4), 4, 4));
   }
 
   // ---------------------------------------------------------------------------
@@ -206,7 +205,7 @@ public class SelectFilesChooser implements ActionListener
       if ((SelectFilesChooser.foChooser.getSelectedFile() == null) || (tnAccessoryType == SelectFilesChooser.ACCESSORY_QUICKZIP))
       {
         loValue.SelectedFile = new File(Util.includeTrailingBackslash(SelectFilesChooser.foChooser.getCurrentDirectory().getPath())
-                + this.txtFileNameTextField1.getText());
+            + this.txtFileNameTextField1.getText());
       }
       else
       {

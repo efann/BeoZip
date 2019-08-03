@@ -20,12 +20,12 @@ public final class Global
 {
 
   protected final static String LOCAL_PATH = Global.isDevelopmentEnvironment() ? Util.includeTrailingBackslash("\\IntelliJ\\BeoZip") : Util
-          .includeTrailingBackslash(Util.includeTrailingBackslash(Util.includeTrailingBackslash(System
-                  .getProperty("user.home")) + "Beowurks")
-                  + "BeoZip");
+      .includeTrailingBackslash(Util.includeTrailingBackslash(Util.includeTrailingBackslash(System
+          .getProperty("user.home")) + "Beowurks")
+          + "BeoZip");
 
   protected final static String ARRAY_DELIMITER = System.getProperty("path.separator") + System.getProperty("path.separator")
-          + System.getProperty("path.separator");
+      + System.getProperty("path.separator");
   protected final static String PROP_LOOKANDFEEL = "Application1 LookAndFeel";
   protected final static String PROP_METALTHEME = "Application1 MetalTheme";
   protected final static String ZIP_EXTENSION = ".zip";
