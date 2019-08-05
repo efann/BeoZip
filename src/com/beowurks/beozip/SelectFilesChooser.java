@@ -6,7 +6,7 @@
  *
  */
 
-package com.beowurks.BeoZip;
+package com.beowurks.beozip;
 
 import com.beowurks.BeoCommon.BaseButton;
 import com.beowurks.BeoCommon.Util;

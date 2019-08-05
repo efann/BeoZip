@@ -22,7 +22,7 @@
     <launcher name="BeoZip" id="156">
       <executable name="BeoZip" iconSet="true" iconFile="D:/IntelliJ/BeoZip/Images/BeoZip.ico" executableMode="gui" singleInstance="true" />
       <splashScreen show="true" bitmapFile="D:/IntelliJ/BeoZip/Images/Beowurks.png" />
-      <java mainClass="com.beowurks.BeoZip.Application">
+      <java mainClass="com.beowurks.beozip.Application">
         <classPath>
           <archive location="BeoZip.jar" failOnError="false" />
         </classPath>

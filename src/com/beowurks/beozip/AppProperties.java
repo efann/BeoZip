@@ -6,7 +6,7 @@
  *
  */
 
-package com.beowurks.BeoZip;
+package com.beowurks.beozip;
 
 import com.beowurks.BeoCommon.BaseProperties;
 import com.beowurks.BeoCommon.Util;

@@ -6,7 +6,7 @@
  *
  */
 
-package com.beowurks.BeoZip;
+package com.beowurks.beozip;
 
 import com.beowurks.BeoCommon.BaseFrame;
 
@@ -70,11 +70,9 @@ public class BeoZipBaseFrame extends BaseFrame
     // which is set in super.processWindowEvent.
     super.processWindowEvent(e);
 
-    switch (e.getID())
+    if (e.getID() == WindowEvent.WINDOW_ACTIVATED)
     {
-      case WindowEvent.WINDOW_ACTIVATED:
-        this.foMainFrame.updateMenus();
-        break;
+      this.foMainFrame.updateMenus();
     }
   }
 

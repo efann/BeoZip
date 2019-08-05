@@ -9,7 +9,41 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="" />
+    <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/install/install.install4j" beforeDir="false" afterPath="$PROJECT_DIR$/install/install.install4j" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/AppProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ArchiveFoldersDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/ArchiveFoldersDialog1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/BeoZipBaseDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/BeoZipBaseFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/BeoZipBaseFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileDialogFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/FileDialogFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/FileMaskSelectorDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/FileMaskSelectorDialog1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/Global.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/Global.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/ListZipFilesFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/ListZipFilesFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/OptionsDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/OptionsDialog1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SelectFilesChooser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/SelectFilesChooser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/SplashScreenWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/SplashScreenWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/TabbedPaneImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/TabbedPaneImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/WinXPZipDialog1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/WinXPZipDialog1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Add.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Add.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Archive.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Archive.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/ArchivingPNG32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/ArchivingPNG32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Delete.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Delete.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Extract.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Extract.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Folders.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Folders.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Location.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Location.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Logo15Percent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Logo15Percent.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Logo300x300.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Logo300x300.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Logo60Percent.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Logo60Percent.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/New.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/New.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Open.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Open.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/QuickZipPNG32.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/QuickZipPNG32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Rescue.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Rescue.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/BeoZip/images/Restore.gif" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/images/Restore.gif" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +112,7 @@
       </method>
     </configuration>
     <configuration name="BeoZip" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.beowurks.BeoZip.Application" />
+      <option name="MAIN_CLASS_NAME" value="com.beowurks.beozip.Application" />
       <module name="BeoZip" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <method v="2">
@@ -144,6 +178,8 @@
       <workItem from="1564685567581" duration="4673000" />
       <workItem from="1564758665976" duration="3450000" />
       <workItem from="1564785209700" duration="36000" />
+      <workItem from="1564854481361" duration="323000" />
+      <workItem from="1565024692708" duration="659000" />
     </task>
     <servers />
   </component>

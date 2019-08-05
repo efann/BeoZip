@@ -6,7 +6,7 @@
  *
  */
 
-package com.beowurks.BeoZip;
+package com.beowurks.beozip;
 
 import com.beowurks.BeoCommon.BaseButton;
 import com.beowurks.BeoCommon.BaseFrame;
@@ -1814,7 +1814,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
   {
     try
     {
-      final BufferedImage loLogo = ImageIO.read(this.getClass().getResource("/com/beowurks/BeoZip/images/Logo300x300.jpg"));
+      final BufferedImage loLogo = ImageIO.read(this.getClass().getResource("/com/beowurks/beozip/images/Logo300x300.jpg"));
       final String lcTitleURL = "http://beozip.sourceforge.net/";
 
       final IAbout loAbout = new AboutAdapter(Util.getTitle(), lcTitleURL,
