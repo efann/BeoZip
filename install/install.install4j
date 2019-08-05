@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="8.0.1" transformSequenceNumber="8">
   <directoryPresets config="D:/IntelliJ/BeoZip/install" />
-  <application name="BeoZip" applicationId="1731-4146-8983-1536" mediaDir="D:/temp/install4j/BeoZip/media" shortName="BeoZip" publisher="Beowurks" publisherWeb="https://www.beowurks.com/applications/single/BeoZip" version="2019.0.0.8" macVolumeId="704ca49a6335aefd" javaMinVersion="12" javaMaxVersion="12">
+  <application name="BeoZip" applicationId="1731-4146-8983-1536" mediaDir="D:/temp/install4j/BeoZip/media" shortName="BeoZip" publisher="Beowurks" publisherWeb="https://www.beowurks.com/applications/single/BeoZip" version="2019.0.1.11" macVolumeId="704ca49a6335aefd" javaMinVersion="12" javaMaxVersion="12">
     <languages>
       <principalLanguage id="en" customLocalizationFile="D:/IntelliJ/BeoZip/install/English.utf8" />
     </languages>
