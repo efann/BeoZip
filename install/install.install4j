@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <install4j version="8.0.1" transformSequenceNumber="8">
-  <directoryPresets config="D:/IntelliJ/BeoZip/install" />
-  <application name="BeoZip" applicationId="1731-4146-8983-1536" mediaDir="D:/temp/install4j/BeoZip/media" shortName="BeoZip" publisher="Beowurks" publisherWeb="https://www.beowurks.com/applications/single/BeoZip" version="2019.0.1.11" macVolumeId="704ca49a6335aefd" javaMinVersion="12" javaMaxVersion="12">
+  <directoryPresets config="D:/IntelliJ/BeoZip/Images" />
+  <application name="BeoZip" applicationId="1731-4146-8983-1536" mediaDir="D:/temp/install4j/BeoZip/media" shortName="BeoZip" publisher="Beowurks" publisherWeb="https://www.beowurks.com/applications/single/BeoZip" version="2019.0.2.12" convertDotsToUnderscores="false" macVolumeId="704ca49a6335aefd" javaMinVersion="12" javaMaxVersion="12">
     <languages>
       <principalLanguage id="en" customLocalizationFile="D:/IntelliJ/BeoZip/install/English.utf8" />
     </languages>
-    <codeSigning windowsEnabled="true" windowsKeySource="windows">
+    <codeSigning macEnabled="true" macPkcs12File="D:/OneDrive/Downloads/Certificates/Apple/DeveloperCertificates.p12" windowsEnabled="true" windowsKeySource="windows">
       <windowsKeystoreIdentifier issuer="Sectigo RSA Code Signing CA" serial="83b2b0638de0f944f6bf5c4bbf6ffa94" subject="Beowurks" />
     </codeSigning>
     <jreBundles jdkProviderId="AdoptOpenJDK" release="openjdk12/jdk-12.0.2+10_openj9-0.15.1" />
@@ -19,7 +19,7 @@
     </entries>
   </files>
   <launchers>
-    <launcher name="BeoZip" id="156">
+    <launcher name="BeoZip" id="156" icnsFile="D:/IntelliJ/BeoZip/Images/BeoZip.icns">
       <executable name="BeoZip" iconSet="true" iconFile="D:/IntelliJ/BeoZip/Images/BeoZip.ico" executableMode="gui" singleInstance="true" />
       <splashScreen show="true" bitmapFile="D:/IntelliJ/BeoZip/Images/Beowurks.png" />
       <java mainClass="com.beowurks.beozip.Application">
@@ -531,5 +531,8 @@ return console.askYesNo(message, true);
     <windows name="Windows" id="61">
       <jreBundle release="openjdk12/jdk-12.0.2+10_openj9-0.15.1" usePack200="false" jreBundleSource="generated" manualJreEntry="true" />
     </windows>
+    <macosArchive name="macOS Single Bundle Archive" id="520" launcherId="156">
+      <jreBundle jreBundleSource="generated" />
+    </macosArchive>
   </mediaSets>
 </install4j>
