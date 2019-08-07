@@ -726,7 +726,10 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
       this.menuTools1.add(this.menuLookFeel1);
       this.menuTools1.add(this.menuOptions1);
       this.menuTools1.add(this.menuWinXPZip1);
-      this.menuTools1.addSeparator();
+    }
+    else
+    {
+      this.menuTools1.setVisible(false);
     }
 
     this.menuHelp1.add(this.menuCredits1);
