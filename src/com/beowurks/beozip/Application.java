@@ -12,6 +12,7 @@ import com.beowurks.BeoCommon.Util;
 import com.beowurks.BeoLookFeel.LFCommon;
 
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 // ---------------------------------------------------------------------------
 // ---------------------------------------------------------------------------

@@ -724,6 +724,7 @@ public class MainFrame extends BeoZipBaseFrame implements ActionListener, Change
     if (!Util.isMacintosh())
     {
       this.menuTools1.add(this.menuLookFeel1);
+      // The options will be shown under Preferences for the Mac.
       this.menuTools1.add(this.menuOptions1);
       this.menuTools1.add(this.menuWinXPZip1);
     }
