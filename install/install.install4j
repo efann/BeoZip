@@ -534,5 +534,8 @@ return console.askYesNo(message, true);
     <macosArchive name="macOS Single Bundle Archive" id="520" launcherId="156">
       <jreBundle jreBundleSource="generated" />
     </macosArchive>
+    <unixInstaller name="Unix Installer" id="521">
+      <jreBundle jreBundleSource="generated" />
+    </unixInstaller>
   </mediaSets>
 </install4j>

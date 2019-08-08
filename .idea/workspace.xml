@@ -11,6 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2b52e953-a883-427b-9fd0-075e8e27d0a3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/beowurks/beozip/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/MainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,6 +154,7 @@
       <workItem from="1565111304055" duration="71000" />
       <workItem from="1565191867946" duration="62000" />
       <workItem from="1565191956281" duration="18000" />
+      <workItem from="1565218339989" duration="711000" />
     </task>
     <servers />
   </component>
