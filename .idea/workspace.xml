@@ -13,8 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/install/install.install4j" beforeDir="false" afterPath="$PROJECT_DIR$/install/install.install4j" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/beozip/AppProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/AppProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/beowurks/beozip/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/beowurks/beozip/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/beowurks/beozip/MainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,6 +159,7 @@
       <workItem from="1565218339989" duration="711000" />
       <workItem from="1565274939094" duration="8288000" />
       <workItem from="1565295134096" duration="1652000" />
+      <workItem from="1565377247123" duration="1249000" />
     </task>
     <servers />
   </component>
